@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>New module by Deltaspectro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">New module</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/Deltaspectro/New_Module" class="btn">View on GitHub</a>
+      <a href="https://github.com/Deltaspectro/New_Module/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Deltaspectro/New_Module/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="zend-framework-3-album-module" class="anchor" href="#zend-framework-3-album-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Zend Framework 3 Album Module</h1>
+
+<p>Este es un módulo del álbum de la muestra para el uso con <a href="https://docs.zendframework.com/zend-mvc">zend-mvc</a> aplicaciones.</p>
+
+<h1>
+<a id="instalación" class="anchor" href="#instalaci%C3%B3n" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instalación</h1>
+
+<p>En primer lugar, decidir sobre un espacio de nombres para su nuevo módulo.</p>
+
+<h2>
+<a id="clonar-este-repositorio-en-su-aplicación" class="anchor" href="#clonar-este-repositorio-en-su-aplicaci%C3%B3n" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Clonar este repositorio en su aplicación:</h2>
+
+<div class="highlight highlight-source-shell"><pre>$ Cd módulo
+$ Git clone https://github.com/Deltaspectro/New_Module.git
+$ Cd del álbum</pre></div>
+
+<h2>
+<a id="eliminar-los-residuos-de-github" class="anchor" href="#eliminar-los-residuos-de-github" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Eliminar los residuos de GitHub:</h2>
+
+<div class="highlight highlight-source-shell"><pre>$ Rm -rf .git .gitignore
+$ Git eliminar remoto origen</pre></div>
+
+<p>El siguiente paso será cambiar el NAMESPACE en los diferentes archivos. Abra cada uno de config/module.config.php, src/Module.php y src/Controller/AlbumController.php, y reemplazar cualquier aparición de Album su nuevo NAMESPACE.</p>
+
+<h2>
+<a id="encontrar-y-remplazar" class="anchor" href="#encontrar-y-remplazar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Encontrar y remplazar</h2>
+
+<blockquote>
+<p>remplace el nombre del Modulo "Album"
+El nombre del controlador AlbumController
+Remplazar el Nombre del Controlador, la vista (View), Nombre del NAMESPACE,
+La carpeta del modulo.
+A continuación, tenemos que la carga automática de configuración de la aplicación. Abra el composer.json archivo en la &gt;raíz de la aplicación, y añadir una entrada bajo la autoload.psr-4clave:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-s"><span class="pl-pds">"</span> Auto-carga <span class="pl-pds">"</span></span> <span class="pl-c1">:</span> {
+     <span class="pl-s"><span class="pl-pds">"</span> PSR-4 <span class="pl-pds">"</span></span> <span class="pl-c1">:</span> {
+         <span class="pl-s"><span class="pl-pds">"</span>Album<span class="pl-cce">\\</span><span class="pl-pds">"</span></span> <span class="pl-c1">:</span> <span class="pl-s"><span class="pl-pds">"</span>Módulo/Album/src/<span class="pl-pds">"</span></span>
+    }
+}</pre></div>
+</blockquote>
+
+<h2>
+<a id="recargando-la-autocarga" class="anchor" href="#recargando-la-autocarga" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Recargando la Autocarga:</h2>
+
+<div class="highlight highlight-source-shell"><pre>$ composer dump-autoload</pre></div>
+
+<h2>
+<a id="por-último-daremos-de-alta-el-módulo" class="anchor" href="#por-%C3%BAltimo-daremos-de-alta-el-m%C3%B3dulo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Por último, daremos de alta el módulo.</h2>
+
+<p>Abrir config/modules.config.php, y añadirlo a la parte inferior de la lista:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">return</span> [ 
+    / <span class="pl-k">*</span> ... <span class="pl-k">*</span> /,
+    <span class="pl-s"><span class="pl-pds">'</span>Album<span class="pl-pds">'</span></span> , 
+]    </pre></div>
+
+<h2>
+<a id="applicationconfigphp" class="anchor" href="#applicationconfigphp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>application.config.php</h2>
+
+<blockquote>
+<p>modules.config.php archivo añadir su módulo:</p>
+
+<div class="highlight highlight-source-shell"><pre><span class="pl-k">return</span> [
+    /<span class="pl-k">*</span> ... <span class="pl-k">*</span>/
+    <span class="pl-s"><span class="pl-pds">'</span>Album<span class="pl-pds">'</span></span>,
+]<span class="pl-k">;</span></pre></div>
+</blockquote>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Deltaspectro/New_Module">New module</a> is maintained by <a href="https://github.com/Deltaspectro">Deltaspectro</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
