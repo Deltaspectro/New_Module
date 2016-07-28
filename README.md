@@ -9,7 +9,7 @@ En primer lugar, decidir sobre un espacio de nombres para su nuevo módulo.
 ##Clonar este repositorio en su aplicación:
 ```bash
 $ Cd módulo
-$ Git clone https://github.com/Deltaspectro/New_Module.git
+$ Git clone https://github.com/Deltaspectro/New_Module_ZF3.git
 $ Cd del álbum
 ```
 ##Eliminar los residuos de GitHub:
