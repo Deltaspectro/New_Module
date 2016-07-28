@@ -19,7 +19,7 @@ $ Git eliminar remoto origen
 ```
 El siguiente paso será cambiar el NAMESPACE en los diferentes archivos. Abra cada uno de config/module.config.php, src/Module.php y src/Controller/AlbumController.php, y reemplazar cualquier aparición de Album su nuevo NAMESPACE.
 
-##encontrar y remplazar
+##Encontrar y remplazar
 
 >remplace el nombre del Modulo "Album"
 >El nombre del controlador AlbumController
@@ -33,6 +33,8 @@ El siguiente paso será cambiar el NAMESPACE en los diferentes archivos. Abra ca
     }
 }
 ```
+>
+
 ##Recargando la Autocarga:
 
 ```bash
@@ -52,8 +54,8 @@ return [
 >modules.config.php archivo añadir su módulo:
 >
 > ```bash
-> 'modules' => [
+> return [
 >     /* ... */
 >     'Album',
-> ],
+> ];
 >```    
