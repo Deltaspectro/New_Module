@@ -2,22 +2,22 @@
 
 Este es un módulo del álbum de la muestra para el uso con [zend-mvc](https://docs.zendframework.com/zend-mvc) aplicaciones.
 
-##Instalación
+#Instalación
 
 En primer lugar, decidir sobre un espacio de nombres para su nuevo módulo.
 
-Clonar este repositorio en su aplicación:
+##Clonar este repositorio en su aplicación:
 ```bash
 $ Cd módulo
 $ Git clone https://github.com/Deltaspectro/New_Module.git
 $ Cd del álbum
 ```
-Eliminar los residuos de GitHub:
+##Eliminar los residuos de GitHub:
 ```bash
 $ Rm -rf .git .gitignore
 $ Git eliminar remoto origen
 ```
-El siguiente paso será cambiar el espacio de nombres en los diferentes archivos. Abra cada uno de config/module.config.php, src/Module.phpy src/Controller/AlbumController.php, y reemplazar cualquier aparición de Album su nuevo espacio de nombres.
+El siguiente paso será cambiar el NAMESPACE en los diferentes archivos. Abra cada uno de config/module.config.php, src/Module.php y src/Controller/AlbumController.php, y reemplazar cualquier aparición de Album su nuevo NAMESPACE.
 
 ##encontrar y remplazar
 
@@ -33,13 +33,14 @@ El siguiente paso será cambiar el espacio de nombres en los diferentes archivos
     }
 }
 ```
-Recargando la Autocarga:
+##Recargando la Autocarga:
 
 ```bash
 $ composer dump-autoload
 ```
 
-Por último, notificar a la aplicación del módulo. Abrir config/modules.config.php, y añadirlo a la parte inferior de la lista:
+##Por último, daremos de alta el módulo. 
+Abrir config/modules.config.php, y añadirlo a la parte inferior de la lista:
 ```bash
 return [ 
     / * ... * /,
@@ -48,10 +49,9 @@ return [
 ```
 ##application.config.php
 
->modules.config.phparchivo añadir su módulo:
+>modules.config.php archivo añadir su módulo:
 >
 > ```bash
->     php
 > 'modules' => [
 >     /* ... */
 >     'Album',
